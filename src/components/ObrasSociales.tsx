@@ -39,24 +39,21 @@ export function ObrasSociales() {
             {obrasLoop.map((obra, i) => (
               <div
                 key={`${obra.nombre}-${i}`}
-                className="flex h-16 shrink-0 items-center gap-3 rounded-2xl border border-navy/10 bg-white px-5 shadow-sm"
+                className="flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-navy/10 bg-white px-4 shadow-sm"
               >
                 {obra.logo ? (
                   <Image
                     src={obra.logo}
                     alt={obra.nombre}
                     width={120}
-                    height={40}
-                    className="h-8 w-auto max-w-[110px] object-contain"
+                    height={48}
+                    className="h-10 w-auto max-w-full object-contain"
                   />
                 ) : (
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-teal to-navy-soft text-sm font-bold text-white">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-teal to-navy-soft text-sm font-bold text-white">
                     {obra.nombre.charAt(0)}
                   </span>
                 )}
-                <span className="whitespace-nowrap text-sm font-medium text-navy/75">
-                  {obra.nombre}
-                </span>
               </div>
             ))}
           </div>
