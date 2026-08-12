@@ -1,0 +1,18 @@
+// Datos de contacto. Todo lo marcado como PLACEHOLDER hay que confirmarlo con
+// el cliente antes de publicar.
+
+export const site = {
+  nombre: "RÊVERIE",
+  telefono1: "(0230) 4672991",
+  telefono2: "(0230) 4426617",
+  telefonoHref: "tel:+542304672991",
+  // PLACEHOLDER: confirmar el número real de WhatsApp de la clínica.
+  whatsapp: "5492304672991",
+  whatsappMensaje: "Hola, quisiera pedir información sobre RÊVERIE.",
+  email: "info@reverie.com.ar",
+  direccion: "Francisco Lauria 2125, Pilar",
+};
+
+export const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+  site.whatsappMensaje,
+)}`;

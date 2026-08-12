@@ -1,0 +1,55 @@
+import { PhoneIcon, WhatsAppIcon } from "./icons";
+import { PlaceholderPhoto } from "./PlaceholderPhoto";
+import { site, whatsappHref } from "@/lib/site";
+
+export function Hero() {
+  return (
+    <section id="top" className="mx-auto max-w-6xl px-6 pb-20 pt-14 sm:pt-20">
+      <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-teal">
+            Clínica de rehabilitación en Pilar · desde 2015
+          </p>
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-navy sm:text-5xl">
+            Rehabilitación neuromotora y traumatológica, con un equipo a cargo
+            de cada paciente
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy/70">
+            Internación, hospital de día e hidroterapia en Francisco Lauria
+            2125, Pilar. Acompañamos a cada paciente y su familia con un
+            equipo médico, neurocognitivo y psicosocial trabajando en
+            conjunto.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:brightness-95"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              Hablar por WhatsApp
+            </a>
+            <a
+              href={site.telefonoHref}
+              className="flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3.5 text-base font-semibold text-navy transition hover:border-navy/30"
+            >
+              <PhoneIcon className="h-5 w-5" />
+              Llamar ahora
+            </a>
+          </div>
+
+          <p className="mt-5 text-sm text-navy/50">
+            {site.telefono1} / {site.telefono2} · Guardia médica las 24 horas
+          </p>
+        </div>
+
+        <PlaceholderPhoto
+          label="Foto de fachada o recepción"
+          className="aspect-[4/3] w-full"
+        />
+      </div>
+    </section>
+  );
+}
