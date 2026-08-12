@@ -13,6 +13,7 @@ const obras: { nombre: string; logo?: string }[] = [
   { nombre: "Caja de Previsión Social de Santa Cruz" },
   { nombre: "OSDE", logo: "/obras-sociales/osde.png" },
   { nombre: "Galeno", logo: "/obras-sociales/galeno.png" },
+  { nombre: "IOSFA", logo: "/obras-sociales/iosfa.svg" },
 ];
 
 // Se duplica la lista para que el loop de la animación sea continuo.
