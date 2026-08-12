@@ -35,6 +35,38 @@ Internación (26 habitaciones), hospital de día, hidroterapia, realidad virtual
 Institucional (misión, visión, valores) · Áreas · Capacitación y formación
 continua · Recursos humanos · Contacto · Galería.
 
+## Diagnóstico del sitio actual
+
+Revisado en agosto 2026. Es un WordPress con tema genérico, y los problemas son
+más de criterio que de tecnología:
+
+- **El hero no dice qué hacen ni dónde.** Foto de stock (hombre en silla de
+  ruedas en un campo, brazos al cielo) con el título "SERVICIOS DE
+  REHABILITACION". No aparece "Pilar", ni un teléfono, ni un botón de contacto.
+- **Cuatro tarjetas azules tapan el hero.** Se montan encima de la imagen y
+  cortan el propio título a la mitad.
+- **Paleta desordenada:** azul institucional, cuatro azules distintos en las
+  tarjetas, verde lima en el footer, y una franja verde WhatsApp a pantalla
+  completa. No hay un sistema de color.
+- **Separadores en diagonal** entre secciones, un recurso muy de plantilla 2015.
+- **Fotos de instalaciones flojas:** la galería abre con un escritorio y un
+  estetoscopio. No se ven habitaciones, gimnasio ni hidroterapia — que es
+  justamente lo que un familiar quiere ver.
+- **Contacto enterrado.** El teléfono está en una barra gris chiquita arriba de
+  todo y en el footer. Debería estar presente todo el tiempo.
+- **Navegación pesada:** 5 menús con desplegables, incluido "CAPACITACION Y
+  FORMACIÓN CONTINUA", que compite con lo importante.
+- **Widgets sociales incrustados** (caja de Facebook con "842 seguidores") que
+  cargan lento y no suman.
+- **Textos institucionales largos** en párrafos densos, escritos para la
+  institución y no para quien busca ayuda.
+- **Copyright ©2024**, o sea el sitio está desatendido hace rato.
+
+Lo bueno que conviene conservar: el **logo** funciona bien, la lista de
+prestaciones es concreta y creíble, y las **obras sociales** (Asociart,
+Bancarios, Fedecámaras, OSUTHGRA, Construir Salud, OSCHOCA, Ostvendra, OSPSIP,
+TV Salud, Caja de Santa Cruz) son un activo fuerte de confianza.
+
 ## Enfoque de la demo
 
 El visitante típico no es el paciente: es un **familiar buscando dónde internar o
