@@ -50,23 +50,50 @@ export function Contacto() {
           </a>
         </div>
 
-        <div className="flex aspect-[4/3] w-full flex-col overflow-hidden rounded-2xl border border-navy/10 bg-sand/40 shadow-sm lg:aspect-auto">
+        <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-navy/10 shadow-md lg:aspect-auto">
           <iframe
             title={`Mapa de ${site.direccion}`}
             src={mapsEmbedSrc}
-            className="h-full w-full flex-1 grayscale-[15%]"
+            className="absolute inset-0 h-full w-full grayscale-[35%] contrast-[1.05] transition duration-500 group-hover:grayscale-0"
             style={{ border: 0 }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
+
+          {/* Tapa el popup nativo de Google y muestra la dirección con estilo propio */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/25 via-transparent to-transparent" />
+
+          <div className="absolute left-4 top-4 flex items-center gap-2.5 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal/10">
+              <PinIcon className="h-4 w-4 text-teal" />
+            </span>
+            <div className="leading-tight">
+              <p className="text-sm font-semibold text-navy">RÊVERIE</p>
+              <p className="text-xs text-navy/60">{site.direccion}</p>
+            </div>
+          </div>
+
           <a
             href={mapsHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 border-t border-navy/10 bg-white px-4 py-3 text-sm font-medium text-navy transition hover:bg-sand/60"
+            className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-navy shadow-lg backdrop-blur-sm transition hover:bg-teal hover:text-white"
           >
-            <PinIcon className="h-4 w-4 text-teal" />
-            Ver en Google Maps
+            Cómo llegar
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              className="h-3.5 w-3.5"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 10h12M11 5l5 5-5 5"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </a>
         </div>
       </div>
