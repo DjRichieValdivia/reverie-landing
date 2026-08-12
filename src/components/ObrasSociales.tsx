@@ -1,16 +1,18 @@
-const obras = [
-  "Asociart",
-  "Bancarios",
-  "Fedecámaras",
-  "OSUTHGRA",
-  "Construir Salud",
-  "OSCHOCA",
-  "Ostvendra",
-  "OSPSIP",
-  "TV Salud",
-  "Caja de Previsión Social de Santa Cruz",
-  "OSDE",
-  "Galeno",
+import Image from "next/image";
+
+const obras: { nombre: string; logo?: string }[] = [
+  { nombre: "Asociart", logo: "/obras-sociales/asociart.webp" },
+  { nombre: "Bancarios" },
+  { nombre: "Fedecámaras", logo: "/obras-sociales/fedecamaras.jpg" },
+  { nombre: "OSUTHGRA", logo: "/obras-sociales/osuthgra.png" },
+  { nombre: "Construir Salud", logo: "/obras-sociales/construir-salud.svg" },
+  { nombre: "OSCHOCA" },
+  { nombre: "Ostvendra", logo: "/obras-sociales/ostvendra.png" },
+  { nombre: "OSPSIP", logo: "/obras-sociales/ospsip.png" },
+  { nombre: "TV Salud", logo: "/obras-sociales/tvsalud.png" },
+  { nombre: "Caja de Previsión Social de Santa Cruz" },
+  { nombre: "OSDE", logo: "/obras-sociales/osde.png" },
+  { nombre: "Galeno", logo: "/obras-sociales/galeno.png" },
 ];
 
 // Se duplica la lista para que el loop de la animación sea continuo.
@@ -36,14 +38,24 @@ export function ObrasSociales() {
           <div className="animate-marquee-rtl flex w-max gap-4">
             {obrasLoop.map((obra, i) => (
               <div
-                key={`${obra}-${i}`}
-                className="flex shrink-0 items-center gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-3.5 shadow-sm"
+                key={`${obra.nombre}-${i}`}
+                className="flex h-16 shrink-0 items-center gap-3 rounded-2xl border border-navy/10 bg-white px-5 shadow-sm"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-teal to-navy-soft text-sm font-bold text-white">
-                  {obra.charAt(0)}
-                </span>
+                {obra.logo ? (
+                  <Image
+                    src={obra.logo}
+                    alt={obra.nombre}
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto max-w-[110px] object-contain"
+                  />
+                ) : (
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-teal to-navy-soft text-sm font-bold text-white">
+                    {obra.nombre.charAt(0)}
+                  </span>
+                )}
                 <span className="whitespace-nowrap text-sm font-medium text-navy/75">
-                  {obra}
+                  {obra.nombre}
                 </span>
               </div>
             ))}
@@ -51,7 +63,9 @@ export function ObrasSociales() {
         </div>
 
         <p className="mt-6 text-center text-sm text-navy/45">
-          Logos pendientes de reemplazar por los originales del cliente.
+          Logos obtenidos de los sitios oficiales de cada obra social; a confirmar con el
+          cliente. Bancarios, OSCHOCA y Caja de Previsión Social de Santa Cruz quedan
+          pendientes de reemplazo.
         </p>
       </div>
     </section>
