@@ -60,19 +60,6 @@ export function Contacto() {
             referrerPolicy="no-referrer-when-downgrade"
           />
 
-          {/* Tapa el popup nativo de Google y muestra la dirección con estilo propio */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/25 via-transparent to-transparent" />
-
-          <div className="absolute left-4 top-4 flex items-center gap-2.5 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal/10">
-              <PinIcon className="h-4 w-4 text-teal" />
-            </span>
-            <div className="leading-tight">
-              <p className="text-sm font-semibold text-navy">RÊVERIE</p>
-              <p className="text-xs text-navy/60">{site.direccion}</p>
-            </div>
-          </div>
-
           <a
             href={mapsHref}
             target="_blank"
