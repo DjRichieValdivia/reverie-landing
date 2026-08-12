@@ -9,6 +9,8 @@ const obras = [
   "OSPSIP",
   "TV Salud",
   "Caja de Previsión Social de Santa Cruz",
+  "OSDE",
+  "Galeno",
 ];
 
 // Se duplica la lista para que el loop de la animación sea continuo.
