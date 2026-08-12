@@ -1,6 +1,10 @@
 import { MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "./icons";
 import { site, whatsappHref } from "@/lib/site";
 
+const direccionQuery = encodeURIComponent(site.direccion);
+const mapsEmbedSrc = `https://www.google.com/maps?q=${direccionQuery}&output=embed`;
+const mapsHref = `https://www.google.com/maps/search/?api=1&query=${direccionQuery}`;
+
 export function Contacto() {
   return (
     <section id="contacto" className="mx-auto max-w-6xl px-6 py-20">
@@ -46,12 +50,24 @@ export function Contacto() {
           </a>
         </div>
 
-        <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-navy/15 bg-sand/40 p-6 text-center lg:aspect-auto">
-          <PinIcon className="h-8 w-8 text-navy/30" />
-          <span className="text-sm font-medium text-navy/50">
-            Mapa de Francisco Lauria 2125, Pilar
-          </span>
-          <span className="text-xs text-navy/35">Se agrega el mapa embebido al confirmar la demo</span>
+        <div className="flex aspect-[4/3] w-full flex-col overflow-hidden rounded-2xl border border-navy/10 bg-sand/40 shadow-sm lg:aspect-auto">
+          <iframe
+            title={`Mapa de ${site.direccion}`}
+            src={mapsEmbedSrc}
+            className="h-full w-full flex-1 grayscale-[15%]"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <a
+            href={mapsHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 border-t border-navy/10 bg-white px-4 py-3 text-sm font-medium text-navy transition hover:bg-sand/60"
+          >
+            <PinIcon className="h-4 w-4 text-teal" />
+            Ver en Google Maps
+          </a>
         </div>
       </div>
     </section>
