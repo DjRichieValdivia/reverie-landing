@@ -89,7 +89,13 @@ export function ObrasSociales() {
     draggingRef.current = true;
     dragStartXRef.current = e.clientX;
     dragStartOffsetRef.current = offsetRef.current;
-    e.currentTarget.setPointerCapture(e.pointerId);
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      // El navegador puede rechazar la captura (p. ej. eventos sintéticos
+      // sin una sesión de puntero real); el arrastre sigue funcionando
+      // igual vía bubbling normal.
+    }
     e.currentTarget.classList.add("cursor-grabbing");
   };
 

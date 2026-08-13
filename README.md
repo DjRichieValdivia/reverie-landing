@@ -83,6 +83,25 @@ dos prioridades son entonces:
 - Tailwind CSS
 - Deploy previsto: Cloudflare (mismo esquema que forge-grow)
 
+## Cómo agregar las fotos reales
+
+No hace falta tocar código ni pedirle nada a Claude. Poné el archivo en la
+carpeta `public/fotos/` con **exactamente** uno de estos nombres (probá con
+`.jpg`, `.jpeg`, `.png` o `.webp`, cualquiera de los cuatro funciona):
+
+| Nombre de archivo | Dónde aparece |
+|---|---|
+| `hero.jpg` | Foto grande del inicio (fachada o recepción) |
+| `equipo.jpg` | Sección "Quiénes somos" |
+| `habitaciones.jpg` | Instalaciones |
+| `gimnasio.jpg` | Instalaciones |
+| `hidroterapia.jpg` | Instalaciones |
+| `realidad-virtual.jpg` | Instalaciones (MOTMI) |
+
+En cuanto el archivo está en esa carpeta con ese nombre, la foto reemplaza al
+placeholder solo, en el próximo refresh de la página. Si el archivo no está,
+sigue mostrando el recuadro punteado "Foto pendiente de RÊVERIE".
+
 ## Desarrollo
 
 ```bash

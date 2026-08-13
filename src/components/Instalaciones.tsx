@@ -1,5 +1,5 @@
 import { CheckIcon } from "./icons";
-import { PlaceholderPhoto } from "./PlaceholderPhoto";
+import { Photo } from "./Photo";
 import { Reveal } from "./Reveal";
 
 const prestaciones = [
@@ -16,7 +16,12 @@ const prestaciones = [
   "Talleres y actividades al aire libre",
 ];
 
-const fotos = ["Habitaciones", "Gimnasio", "Hidroterapia", "Realidad virtual (MOTMI)"];
+const fotos = [
+  { nombre: "habitaciones", label: "Habitaciones" },
+  { nombre: "gimnasio", label: "Gimnasio" },
+  { nombre: "hidroterapia", label: "Hidroterapia" },
+  { nombre: "realidad-virtual", label: "Realidad virtual (MOTMI)" },
+];
 
 export function Instalaciones() {
   return (
@@ -32,8 +37,13 @@ export function Instalaciones() {
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         {fotos.map((foto, index) => (
-          <Reveal key={foto} delay={index * 70}>
-            <PlaceholderPhoto label={foto} className="aspect-[16/10] w-full" />
+          <Reveal key={foto.nombre} delay={index * 70}>
+            <Photo
+              name={foto.nombre}
+              alt={foto.label}
+              label={foto.label}
+              className="aspect-[16/10] w-full"
+            />
           </Reveal>
         ))}
       </div>

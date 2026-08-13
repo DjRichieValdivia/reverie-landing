@@ -1,5 +1,5 @@
 import { PhoneIcon, WhatsAppIcon } from "./icons";
-import { PlaceholderPhoto } from "./PlaceholderPhoto";
+import { Photo } from "./Photo";
 import { site, whatsappHref } from "@/lib/site";
 
 export function Hero() {
@@ -74,9 +74,12 @@ export function Hero() {
             className="animate-fade-up"
             style={{ "--fade-delay": "120ms" } as React.CSSProperties}
           >
-            <PlaceholderPhoto
+            <Photo
+              name="hero"
+              alt="Fachada y recepción de RÊVERIE"
               label="Foto de fachada o recepción"
               className="aspect-[4/3] w-full"
+              priority
             />
           </div>
         </div>

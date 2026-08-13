@@ -1,4 +1,4 @@
-import { PlaceholderPhoto } from "./PlaceholderPhoto";
+import { Photo } from "./Photo";
 import { Reveal } from "./Reveal";
 
 export function QuienesSomos() {
@@ -6,7 +6,9 @@ export function QuienesSomos() {
     <section id="quienes-somos" className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <Reveal delay={80} className="lg:order-2">
-          <PlaceholderPhoto
+          <Photo
+            name="equipo"
+            alt="Equipo o pasillo de RÊVERIE"
             label="Foto del equipo o un pasillo de la clínica"
             className="aspect-[4/3] w-full"
           />
