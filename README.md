@@ -91,16 +91,24 @@ carpeta `public/fotos/` con **exactamente** uno de estos nombres (probá con
 
 | Nombre de archivo | Dónde aparece |
 |---|---|
-| `hero.jpg` | Foto grande del inicio (fachada o recepción) |
-| `equipo.jpg` | Sección "Quiénes somos" |
-| `habitaciones.jpg` | Instalaciones |
-| `gimnasio.jpg` | Instalaciones |
-| `hidroterapia.jpg` | Instalaciones |
-| `realidad-virtual.jpg` | Instalaciones (MOTMI) |
+| `hero.jpg` | Foto grande del inicio (fachada o recepción) — ✅ ya puesta |
+| `equipo.jpg` | Sección "Quiénes somos" — ✅ ya puesta |
+| `habitaciones.jpg` | Instalaciones — ✅ ya puesta |
+| `gimnasio.jpg` | Instalaciones — falta |
+| `hidroterapia.jpg` | Instalaciones — falta |
+| `realidad-virtual.jpg` | Instalaciones (MOTMI) — falta |
+
+Las tres primeras son fotos reales tomadas del sitio actual de RÊVERIE
+(reverie.com.ar), como punto de partida mientras no tengan material nuevo.
+Las últimas tres no existen en su sitio actual, por eso siguen en
+placeholder.
 
 En cuanto el archivo está en esa carpeta con ese nombre, la foto reemplaza al
-placeholder solo, en el próximo refresh de la página. Si el archivo no está,
-sigue mostrando el recuadro punteado "Foto pendiente de RÊVERIE".
+placeholder solo. Si el sitio ya estaba corriendo (`npm run dev`) cuando
+agregaste la foto, puede hacer falta reiniciarlo (`Ctrl+C` y de nuevo
+`npm run dev`) para que la vea — es una rareza del modo desarrollo, no pasa
+en el sitio ya publicado. Si el archivo no está, sigue mostrando el recuadro
+punteado "Foto pendiente de RÊVERIE".
 
 ## Reseñas de Google en vivo
 

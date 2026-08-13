@@ -6,8 +6,8 @@ export const site = {
   telefono1: "(0230) 4672991",
   telefono2: "(0230) 4426617",
   telefonoHref: "tel:+542304672991",
-  // PLACEHOLDER: confirmar el número real de WhatsApp de la clínica.
-  whatsapp: "5492304672991",
+  // Número real, tomado del botón de WhatsApp del sitio actual (reverie.com.ar).
+  whatsapp: "5491124047615",
   whatsappMensaje: "Hola, quisiera pedir información sobre RÊVERIE.",
   email: "info@reverie.com.ar",
   direccion: "Francisco Lauria 2125, Pilar",
