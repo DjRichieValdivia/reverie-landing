@@ -50,6 +50,39 @@ body {
   border-radius: 2px;
 }
 
+::selection {
+  background: var(--color-teal);
+  color: var(--color-cream);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-teal) var(--color-cream-dark);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-teal);
+  border-radius: 9999px;
+  border: 2px solid var(--color-cream-dark);
+}
+
+header {
+  box-shadow: 0 1px 0 rgb(22 50 62 / 0);
+  transition: box-shadow 250ms var(--ease-out-strong);
+}
+
+header[data-elevated="true"] {
+  box-shadow: 0 8px 24px -16px rgb(22 50 62 / 0.35);
+}
+
 .shadow-surface {
   box-shadow: 0 12px 30px -14px rgb(22 50 62 / 0.18);
 }

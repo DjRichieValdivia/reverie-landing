@@ -68,13 +68,13 @@ export function Contacto() {
             href={mapsHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-tactile absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-navy shadow-lg backdrop-blur-sm transition-colors hover:bg-teal hover:text-white"
+            className="btn-tactile group/link absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-navy shadow-lg backdrop-blur-sm transition-colors hover:bg-teal hover:text-white"
           >
             Cómo llegar
             <svg
               viewBox="0 0 20 20"
               fill="none"
-              className="h-3.5 w-3.5"
+              className="h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover/link:translate-x-0.5"
               aria-hidden="true"
             >
               <path

@@ -31,7 +31,7 @@ export function Hero() {
               de cada paciente
             </h1>
             <p
-              className="animate-fade-up mt-6 max-w-xl text-lg leading-relaxed text-navy/70"
+              className="animate-fade-up text-pretty mt-6 max-w-xl text-lg leading-relaxed text-navy/70"
               style={{ "--fade-delay": "160ms" } as React.CSSProperties}
             >
               Internación, hospital de día e hidroterapia en Francisco Lauria

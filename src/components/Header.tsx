@@ -14,6 +14,14 @@ const links = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [elevated, setElevated] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setElevated(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const top = document.querySelector("#top");
@@ -37,9 +45,15 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur">
+    <header
+      data-elevated={elevated}
+      className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur"
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#top" className="text-2xl font-semibold tracking-tight text-navy">
+        <a
+          href="#top"
+          className="text-2xl font-semibold tracking-tight text-navy transition-colors hover:text-teal-dark"
+        >
           RÊVERIE
         </a>
 
