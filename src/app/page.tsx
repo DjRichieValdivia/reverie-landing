@@ -1,6 +1,5 @@
 import { Areas } from "@/components/Areas";
 import { ComoEmpezar } from "@/components/ComoEmpezar";
-import { Confianza } from "@/components/Confianza";
 import { Contacto } from "@/components/Contacto";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -17,7 +16,6 @@ export default function Home() {
       <Header />
       <main id="main-content" className="flex-1">
         <Hero />
-        <Confianza />
         <QuienesSomos />
         <Areas />
         <Instalaciones />
