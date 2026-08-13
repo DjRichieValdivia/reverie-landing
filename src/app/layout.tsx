@@ -12,10 +12,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "RÊVERIE — Clínica de Rehabilitación en Pilar";
+const description =
+  "Rehabilitación neuromotora y traumatológica en Pilar. Internación, hospital de día, hidroterapia y un equipo interdisciplinario a cargo de cada paciente.";
+
 export const metadata: Metadata = {
-  title: "RÊVERIE — Clínica de Rehabilitación en Pilar",
-  description:
-    "Rehabilitación neuromotora y traumatológica en Pilar. Internación, hospital de día, hidroterapia y un equipo interdisciplinario a cargo de cada paciente.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    locale: "es_AR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
