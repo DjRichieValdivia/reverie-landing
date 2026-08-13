@@ -10,7 +10,7 @@ export function Hero() {
         className="ambient-glow left-[-10%] top-[-25%] h-80 w-80 bg-sage/10"
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-14 sm:pt-20">
+      <div className="relative mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pt-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p
@@ -78,6 +78,22 @@ export function Hero() {
               priority
             />
           </div>
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-navy/10 pt-8 text-sm text-navy/70">
+          <span>
+            <strong className="font-semibold text-navy">26</strong> habitaciones
+            para internación
+          </span>
+          <span className="hidden text-navy/20 sm:inline">·</span>
+          <span>
+            <strong className="font-semibold text-navy">4</strong> áreas de
+            tratamiento integradas
+          </span>
+          <span className="hidden text-navy/20 sm:inline">·</span>
+          <span>Hidroterapia</span>
+          <span className="hidden text-navy/20 sm:inline">·</span>
+          <span>Hospital de día</span>
         </div>
       </div>
     </section>
