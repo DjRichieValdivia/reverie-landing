@@ -102,6 +102,40 @@ En cuanto el archivo está en esa carpeta con ese nombre, la foto reemplaza al
 placeholder solo, en el próximo refresh de la página. Si el archivo no está,
 sigue mostrando el recuadro punteado "Foto pendiente de RÊVERIE".
 
+## Reseñas de Google en vivo
+
+La sección "Reseñas de Google" del sitio ya muestra 3 reseñas reales de
+RÊVERIE (4,3 · 49 reseñas, verificado en la ficha de Google Maps). Son fijas
+hasta que se configure la conexión en vivo de abajo — no hace falta hacer
+nada más para que el sitio funcione bien.
+
+Si en algún momento quieren que se actualicen solas (para que una reseña
+nueva aparezca sin tocar código), hay que completar dos datos:
+
+1. **Conseguir una API key de Google Places** — en
+   [Google Cloud Console](https://console.cloud.google.com/), crear un
+   proyecto, habilitar la **"Places API"** y generar una API key (requiere
+   una cuenta de Google y una tarjeta cargada para facturación; Google da uso
+   gratis mensual que normalmente alcanza de sobra para un sitio de una sola
+   clínica).
+2. **Conseguir el Place ID de RÊVERIE** — con la
+   [herramienta oficial de Google](https://developers.google.com/maps/documentation/places/web-service/place-id),
+   buscar "Reverie Clinica de Rehabilitacion, Pilar" y copiar el ID que
+   aparece.
+
+Con esos dos datos, crear un archivo `.env.local` en la raíz del proyecto
+(hay un `.env.example` de referencia) con:
+
+```
+GOOGLE_PLACES_API_KEY=la-key-que-generaron
+GOOGLE_PLACE_ID=el-id-que-encontraron
+```
+
+A partir de ahí, el sitio trae automáticamente las reseñas de 4 y 5
+estrellas de Google, se actualiza una vez por día, y si en algún momento
+Google no responde vuelve solo a mostrar las 3 fijas de siempre. El archivo
+`.env.local` nunca se sube a GitHub (está en `.gitignore`).
+
 ## Desarrollo
 
 ```bash

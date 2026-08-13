@@ -8,6 +8,7 @@ import { Hero } from "@/components/Hero";
 import { Instalaciones } from "@/components/Instalaciones";
 import { ObrasSociales } from "@/components/ObrasSociales";
 import { QuienesSomos } from "@/components/QuienesSomos";
+import { Resenas } from "@/components/Resenas";
 import { WhatsappFloat } from "@/components/WhatsappFloat";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Areas />
         <Instalaciones />
         <ComoEmpezar />
+        <Resenas />
         <ObrasSociales />
         <Contacto />
       </main>

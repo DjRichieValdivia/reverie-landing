@@ -11,6 +11,11 @@ export const site = {
   whatsappMensaje: "Hola, quisiera pedir información sobre RÊVERIE.",
   email: "info@reverie.com.ar",
   direccion: "Francisco Lauria 2125, Pilar",
+  // Ficha real verificada en Google Maps: 4,3 con 49 reseñas (agosto 2026).
+  googleReviewsHref:
+    "https://www.google.com/maps/search/Reverie+Clinica+de+Rehabilitacion+Pilar",
+  googleRating: 4.3,
+  googleReviewCount: 49,
 };
 
 export const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
