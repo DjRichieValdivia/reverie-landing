@@ -25,7 +25,7 @@ export function Areas() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
             Áreas de servicio
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
             Un equipo interdisciplinario para cada paciente
           </h2>
         </div>
@@ -34,7 +34,7 @@ export function Areas() {
           {areas.map((area) => (
             <div
               key={area.nombre}
-              className="rounded-2xl border border-navy/10 bg-white p-7"
+              className="shadow-surface shadow-surface-hover rounded-xl bg-white p-7"
             >
               <h3 className="text-lg font-semibold text-navy">{area.nombre}</h3>
               <p className="mt-2 text-navy/65">{area.detalle}</p>

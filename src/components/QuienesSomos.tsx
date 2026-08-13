@@ -12,7 +12,7 @@ export function QuienesSomos() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
             Quiénes somos
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
             Rehabilitar es más que tratar el cuerpo
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-navy/70">

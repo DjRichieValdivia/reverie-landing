@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
 import { site, whatsappHref } from "@/lib/site";
 
@@ -13,6 +13,28 @@ const links = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const top = document.querySelector("#top");
+    const sections = [top, ...links.map((link) => document.querySelector(link.href))].filter(
+      (el): el is Element => el !== null,
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id === "top" ? null : `#${entry.target.id}`);
+          }
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur">
@@ -21,9 +43,18 @@ export function Header() {
           RÊVERIE
         </a>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium text-navy/70 md:flex">
+        <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="transition hover:text-navy">
+            <a
+              key={link.href}
+              href={link.href}
+              aria-current={activeId === link.href ? "true" : undefined}
+              className={
+                activeId === link.href
+                  ? "font-semibold text-teal transition"
+                  : "text-navy/70 transition hover:text-navy"
+              }
+            >
               {link.label}
             </a>
           ))}
@@ -41,7 +72,7 @@ export function Header() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-95"
+            className="flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition active:scale-[0.98] hover:brightness-95"
           >
             <WhatsAppIcon className="h-4 w-4" />
             <span className="hidden sm:inline">WhatsApp</span>
@@ -52,7 +83,7 @@ export function Header() {
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy transition active:scale-[0.96] md:hidden"
           >
             <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
               {menuOpen ? (
@@ -83,7 +114,12 @@ export function Header() {
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded-lg px-2 py-3 text-base font-medium text-navy/80 transition hover:bg-sand/50 hover:text-navy"
+                  aria-current={activeId === link.href ? "true" : undefined}
+                  className={
+                    activeId === link.href
+                      ? "block rounded-lg bg-sand/50 px-2 py-3 text-base font-semibold text-teal"
+                      : "block rounded-lg px-2 py-3 text-base font-medium text-navy/80 transition hover:bg-sand/50 hover:text-navy"
+                  }
                 >
                   {link.label}
                 </a>

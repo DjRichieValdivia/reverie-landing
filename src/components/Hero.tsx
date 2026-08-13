@@ -10,7 +10,7 @@ export function Hero() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-teal">
             Clínica de rehabilitación en Pilar · desde 2015
           </p>
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-navy sm:text-5xl">
+          <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-navy sm:text-5xl">
             Rehabilitación neuromotora y traumatológica, con un equipo a cargo
             de cada paciente
           </h1>
@@ -26,14 +26,14 @@ export function Hero() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:brightness-95"
+              className="flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm transition active:scale-[0.98] hover:brightness-95"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Hablar por WhatsApp
             </a>
             <a
               href={site.telefonoHref}
-              className="flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3.5 text-base font-semibold text-navy transition hover:border-navy/30"
+              className="flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3.5 text-base font-semibold text-navy transition active:scale-[0.98] hover:border-navy/30"
             >
               <PhoneIcon className="h-5 w-5" />
               Llamar ahora
