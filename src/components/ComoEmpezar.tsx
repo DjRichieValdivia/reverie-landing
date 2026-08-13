@@ -49,7 +49,7 @@ export function ComoEmpezar() {
                 {index < pasos.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="absolute left-6 top-6 hidden h-px w-full bg-white/15 sm:block"
+                    className="absolute left-12 top-6 hidden h-px w-[calc(100%-3rem)] bg-white/15 sm:block"
                   />
                 )}
                 <div

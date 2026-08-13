@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { Reveal } from "./Reveal";
 
 const obras: { nombre: string; logo?: string }[] = [
@@ -20,7 +23,93 @@ const obras: { nombre: string; logo?: string }[] = [
 // Se duplica la lista para que el loop de la animación sea continuo.
 const obrasLoop = [...obras, ...obras];
 
+// px/ms — equivale a recorrer un set completo en 32s, igual que antes.
+const AUTO_SPEED = 1 / 32;
+
 export function ObrasSociales() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const setWidthRef = useRef(0);
+  const draggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartOffsetRef = useRef(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const measure = () => {
+      setWidthRef.current = track.scrollWidth / 2;
+    };
+    measure();
+
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(track);
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const wrap = (value: number) => {
+      const w = setWidthRef.current;
+      if (w <= 0) return value;
+      return ((value % w) + w) % w;
+    };
+
+    const applyTransform = () => {
+      track.style.transform = `translateX(${-offsetRef.current}px)`;
+    };
+    applyTransform();
+
+    if (reduceMotion) return;
+
+    let lastTime: number | null = null;
+    let frameId: number;
+
+    const tick = (time: number) => {
+      if (lastTime === null) lastTime = time;
+      const delta = time - lastTime;
+      lastTime = time;
+
+      if (!draggingRef.current) {
+        offsetRef.current = wrap(offsetRef.current + AUTO_SPEED * delta);
+        applyTransform();
+      }
+
+      frameId = requestAnimationFrame(tick);
+    };
+
+    frameId = requestAnimationFrame(tick);
+    return () => {
+      resizeObserver.disconnect();
+      cancelAnimationFrame(frameId);
+    };
+  }, []);
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.button !== 0) return;
+    draggingRef.current = true;
+    dragStartXRef.current = e.clientX;
+    dragStartOffsetRef.current = offsetRef.current;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    e.currentTarget.classList.add("cursor-grabbing");
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!draggingRef.current) return;
+    const track = trackRef.current;
+    if (!track) return;
+    const delta = e.clientX - dragStartXRef.current;
+    const w = setWidthRef.current;
+    let next = dragStartOffsetRef.current - delta;
+    if (w > 0) next = ((next % w) + w) % w;
+    offsetRef.current = next;
+    track.style.transform = `translateX(${-next}px)`;
+  };
+
+  const endDrag = (e: React.PointerEvent<HTMLDivElement>) => {
+    draggingRef.current = false;
+    e.currentTarget.classList.remove("cursor-grabbing");
+  };
+
   return (
     <section className="bg-cream-dark py-16">
       <div className="mx-auto max-w-6xl px-6">
@@ -31,15 +120,21 @@ export function ObrasSociales() {
         </Reveal>
 
         <div
-          className="relative mt-8 overflow-hidden"
+          className="relative mt-8 cursor-grab select-none overflow-hidden active:cursor-grabbing"
           style={{
+            touchAction: "pan-y",
             maskImage:
               "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
             WebkitMaskImage:
               "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
           }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+          onPointerLeave={endDrag}
         >
-          <div className="animate-marquee-rtl flex w-max gap-4">
+          <div ref={trackRef} className="flex w-max gap-4">
             {obrasLoop.map((obra, i) => (
               <div
                 key={`${obra.nombre}-${i}`}
@@ -51,6 +146,7 @@ export function ObrasSociales() {
                     alt={obra.nombre}
                     width={120}
                     height={48}
+                    draggable={false}
                     className="h-10 w-auto max-w-full object-contain"
                   />
                 ) : (
