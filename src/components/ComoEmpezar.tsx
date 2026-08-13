@@ -25,11 +25,7 @@ export function ComoEmpezar() {
     <section className="relative overflow-hidden bg-navy py-20">
       <div
         aria-hidden="true"
-        className="ambient-glow left-[-10%] top-[-20%] h-80 w-80 bg-sage/20"
-      />
-      <div
-        aria-hidden="true"
-        className="ambient-glow bottom-[-25%] right-[-5%] h-96 w-96 bg-teal-dark/40"
+        className="ambient-glow bottom-[-30%] right-[-10%] h-96 w-96 bg-sage/10"
       />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -37,7 +33,7 @@ export function ComoEmpezar() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-sage">
             Cómo empezar
           </p>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-white sm:text-4xl">
             Tres pasos para arrancar el tratamiento
           </h2>
         </Reveal>

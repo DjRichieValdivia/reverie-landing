@@ -7,11 +7,7 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="ambient-glow left-[-15%] top-[-15%] h-96 w-96 bg-sage/25"
-      />
-      <div
-        aria-hidden="true"
-        className="ambient-glow right-[5%] top-[10%] h-72 w-72 bg-teal/10"
+        className="ambient-glow left-[-10%] top-[-25%] h-80 w-80 bg-sage/10"
       />
 
       <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-14 sm:pt-20">
@@ -24,7 +20,7 @@ export function Hero() {
               Clínica de rehabilitación en Pilar · desde 2015
             </p>
             <h1
-              className="animate-fade-up text-balance text-4xl font-semibold leading-tight tracking-tight text-navy sm:text-5xl"
+              className="font-display animate-fade-up text-balance text-4xl font-medium leading-[1.15] text-navy sm:text-5xl"
               style={{ "--fade-delay": "80ms" } as React.CSSProperties}
             >
               Rehabilitación neuromotora y traumatológica, con un equipo a cargo

@@ -32,20 +32,27 @@ export function Areas() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
             Áreas de servicio
           </p>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
+          <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">
             Un equipo interdisciplinario para cada paciente
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 divide-y divide-navy/10 border-t border-navy/10">
           {areas.map((area, index) => (
             <Reveal key={area.nombre} delay={index * 70}>
-              <div className="shadow-surface shadow-surface-hover h-full rounded-xl bg-white p-7">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-teal/10 text-teal-dark">
-                  <area.Icon className="h-5 w-5" />
+              <div className="flex flex-col gap-4 py-7 sm:flex-row sm:items-center sm:gap-10">
+                <span className="font-display shrink-0 text-3xl text-teal/35 sm:w-14">
+                  0{index + 1}
+                </span>
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal-dark">
+                    <area.Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy">{area.nombre}</h3>
+                    <p className="mt-1 text-navy/65">{area.detalle}</p>
+                  </div>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-navy">{area.nombre}</h3>
-                <p className="mt-2 text-navy/65">{area.detalle}</p>
               </div>
             </Reveal>
           ))}

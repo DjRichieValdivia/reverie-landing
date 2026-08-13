@@ -14,11 +14,9 @@ export function QuienesSomos() {
           />
         </Reveal>
         <Reveal className="lg:order-1">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
-            Quiénes somos
-          </p>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
-            Rehabilitar es más que tratar el cuerpo
+          <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">
+            Rehabilitar es <em className="text-teal-dark italic">más</em> que tratar
+            el cuerpo
           </h2>
           <p className="text-pretty mt-5 text-lg leading-relaxed text-navy/70">
             Entendemos la rehabilitación como un proceso integral: no solo la

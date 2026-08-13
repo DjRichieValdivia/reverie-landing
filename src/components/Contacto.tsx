@@ -14,7 +14,7 @@ export function Contacto() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
             Contacto
           </p>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
+          <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">
             Estamos para ayudarte
           </h2>
           <p className="mt-4 text-lg text-navy/70">

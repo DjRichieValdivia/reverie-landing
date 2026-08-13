@@ -30,7 +30,7 @@ export function Instalaciones() {
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
           Instalaciones y equipamiento
         </p>
-        <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
+        <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">
           Todo lo que un tratamiento serio necesita
         </h2>
       </Reveal>
