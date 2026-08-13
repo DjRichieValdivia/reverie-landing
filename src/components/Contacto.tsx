@@ -36,7 +36,14 @@ export function Contacto() {
             </li>
             <li className="flex items-center gap-3">
               <PinIcon className="h-5 w-5 text-teal" />
-              <span className="text-navy">{site.direccion}</span>
+              <a
+                href={mapsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-navy hover:underline"
+              >
+                {site.direccion}
+              </a>
             </li>
           </ul>
 

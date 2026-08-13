@@ -24,6 +24,15 @@ export function Header() {
   }, []);
 
   useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
+  useEffect(() => {
     const top = document.querySelector("#top");
     const sections = [top, ...links.map((link) => document.querySelector(link.href))].filter(
       (el): el is Element => el !== null,
@@ -77,7 +86,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <a
             href={site.telefonoHref}
-            className="hidden items-center gap-2 text-sm font-semibold text-navy sm:flex"
+            className="hidden items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-teal-dark sm:flex"
           >
             <PhoneIcon className="h-4 w-4" />
             {site.telefono1}

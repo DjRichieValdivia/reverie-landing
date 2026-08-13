@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,12 +19,23 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  robots: {
+    index: false,
+    follow: false,
+  },
+  appleWebApp: {
+    title: "RÊVERIE",
+  },
   openGraph: {
     title,
     description,
     locale: "es_AR",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f7f4ee",
 };
 
 export default function RootLayout({
