@@ -44,7 +44,7 @@ export async function Resenas() {
             className="mt-4 inline-flex items-center gap-2.5 text-navy/70 hover:underline"
           >
             <GoogleIcon className="h-5 w-5 shrink-0" />
-            <Stars rating={rating} />
+            <Stars rating={Math.round(rating)} />
             <span className="tabular-nums">
               {rating.toString().replace(".", ",")} · {total} reseñas
             </span>
@@ -59,10 +59,7 @@ export async function Resenas() {
                   <Stars rating={resena.rating} />
                   <GoogleIcon className="h-4 w-4 shrink-0 opacity-60" />
                 </div>
-                <span className="font-display -mt-1 block text-5xl leading-none text-teal/25">
-                  “
-                </span>
-                <p className="text-pretty -mt-4 text-navy/75">{resena.texto}</p>
+                <p className="text-pretty mt-4 text-navy/75">{resena.texto}</p>
                 <p className="mt-auto pt-6 text-sm font-semibold text-navy">{resena.autor}</p>
               </div>
             </Reveal>

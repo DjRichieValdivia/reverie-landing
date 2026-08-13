@@ -22,9 +22,9 @@ const RESENAS_BASE: Resena[] = [
     rating: 5,
   },
   {
-    autor: "Paula M.",
+    autor: "Mariana M.",
     texto:
-      "Muy buena calidad humana, y sobre todo, muy buena atención en la rehabilitación que necesitó mi hijo, quien estuvo internado seis meses, ingresado después de un montón de operaciones debidas a un accidente grave que tuvo…",
+      "Mi esposo tuvo un ACV en noviembre 2025. Hoy está caminando sin bastón. Agradezco a todo el equipo de esta gran institución por los avances que están a la vista y por la contención que hemos recibido toda la familia.",
     rating: 5,
   },
 ];
