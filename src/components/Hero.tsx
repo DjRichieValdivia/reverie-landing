@@ -4,51 +4,82 @@ import { site, whatsappHref } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section id="top" className="mx-auto max-w-6xl px-6 pb-20 pt-14 sm:pt-20">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
-        <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-teal">
-            Clínica de rehabilitación en Pilar · desde 2015
-          </p>
-          <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-navy sm:text-5xl">
-            Rehabilitación neuromotora y traumatológica, con un equipo a cargo
-            de cada paciente
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy/70">
-            Internación, hospital de día e hidroterapia en Francisco Lauria
-            2125, Pilar. Acompañamos a cada paciente y su familia con un
-            equipo médico, neurocognitivo y psicosocial trabajando en
-            conjunto.
-          </p>
+    <section id="top" className="relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="ambient-glow left-[-15%] top-[-15%] h-96 w-96 bg-sage/25"
+      />
+      <div
+        aria-hidden="true"
+        className="ambient-glow right-[5%] top-[10%] h-72 w-72 bg-teal/10"
+      />
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm transition active:scale-[0.98] hover:brightness-95"
+      <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-14 sm:pt-20">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p
+              className="animate-fade-up mb-4 text-sm font-semibold uppercase tracking-wide text-teal"
+              style={{ "--fade-delay": "0ms" } as React.CSSProperties}
             >
-              <WhatsAppIcon className="h-5 w-5" />
-              Hablar por WhatsApp
-            </a>
-            <a
-              href={site.telefonoHref}
-              className="flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3.5 text-base font-semibold text-navy transition active:scale-[0.98] hover:border-navy/30"
+              Clínica de rehabilitación en Pilar · desde 2015
+            </p>
+            <h1
+              className="animate-fade-up text-balance text-4xl font-semibold leading-tight tracking-tight text-navy sm:text-5xl"
+              style={{ "--fade-delay": "80ms" } as React.CSSProperties}
             >
-              <PhoneIcon className="h-5 w-5" />
-              Llamar ahora
-            </a>
+              Rehabilitación neuromotora y traumatológica, con un equipo a cargo
+              de cada paciente
+            </h1>
+            <p
+              className="animate-fade-up mt-6 max-w-xl text-lg leading-relaxed text-navy/70"
+              style={{ "--fade-delay": "160ms" } as React.CSSProperties}
+            >
+              Internación, hospital de día e hidroterapia en Francisco Lauria
+              2125, Pilar. Acompañamos a cada paciente y su familia con un
+              equipo médico, neurocognitivo y psicosocial trabajando en
+              conjunto.
+            </p>
+
+            <div
+              className="animate-fade-up mt-8 flex flex-col gap-3 sm:flex-row"
+              style={{ "--fade-delay": "240ms" } as React.CSSProperties}
+            >
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-tactile flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm hover:brightness-95"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+                Hablar por WhatsApp
+              </a>
+              <a
+                href={site.telefonoHref}
+                className="btn-tactile flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3.5 text-base font-semibold text-navy hover:border-navy/30"
+              >
+                <PhoneIcon className="h-5 w-5" />
+                Llamar ahora
+              </a>
+            </div>
+
+            <p
+              className="animate-fade-up mt-5 text-sm text-navy/50"
+              style={{ "--fade-delay": "300ms" } as React.CSSProperties}
+            >
+              {site.telefono1} / {site.telefono2} · Guardia médica las 24 horas
+            </p>
           </div>
 
-          <p className="mt-5 text-sm text-navy/50">
-            {site.telefono1} / {site.telefono2} · Guardia médica las 24 horas
-          </p>
+          <div
+            className="animate-fade-up"
+            style={{ "--fade-delay": "120ms" } as React.CSSProperties}
+          >
+            <PlaceholderPhoto
+              label="Foto de fachada o recepción"
+              className="aspect-[4/3] w-full"
+            />
+          </div>
         </div>
-
-        <PlaceholderPhoto
-          label="Foto de fachada o recepción"
-          className="aspect-[4/3] w-full"
-        />
       </div>
     </section>
   );

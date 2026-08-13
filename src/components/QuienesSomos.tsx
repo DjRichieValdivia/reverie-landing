@@ -1,14 +1,17 @@
 import { PlaceholderPhoto } from "./PlaceholderPhoto";
+import { Reveal } from "./Reveal";
 
 export function QuienesSomos() {
   return (
     <section id="quienes-somos" className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        <PlaceholderPhoto
-          label="Foto del equipo o un pasillo de la clínica"
-          className="aspect-[4/3] w-full lg:order-2"
-        />
-        <div className="lg:order-1">
+        <Reveal delay={80} className="lg:order-2">
+          <PlaceholderPhoto
+            label="Foto del equipo o un pasillo de la clínica"
+            className="aspect-[4/3] w-full"
+          />
+        </Reveal>
+        <Reveal className="lg:order-1">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
             Quiénes somos
           </p>
@@ -25,7 +28,7 @@ export function QuienesSomos() {
             neurocognitivo y psicosocial— que evalúa y acompaña a cada persona
             en conjunto, desde el primer día.
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

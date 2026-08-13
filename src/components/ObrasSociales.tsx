@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "./Reveal";
 
 const obras: { nombre: string; logo?: string }[] = [
   { nombre: "Asociart", logo: "/obras-sociales/asociart.webp" },
@@ -23,9 +24,11 @@ export function ObrasSociales() {
   return (
     <section className="bg-cream-dark py-16">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="text-center text-sm font-semibold uppercase tracking-wide text-teal">
-          Trabajamos con estas obras sociales
-        </p>
+        <Reveal>
+          <p className="text-center text-sm font-semibold uppercase tracking-wide text-teal">
+            Trabajamos con estas obras sociales
+          </p>
+        </Reveal>
 
         <div
           className="relative mt-8 overflow-hidden"

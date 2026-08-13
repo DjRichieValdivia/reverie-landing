@@ -19,7 +19,7 @@ export default function NotFound() {
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <Link
           href="/"
-          className="flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3.5 text-base font-semibold text-navy transition active:scale-[0.98] hover:border-navy/30"
+          className="btn-tactile flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3.5 text-base font-semibold text-navy hover:border-navy/30"
         >
           Volver al inicio
         </Link>
@@ -27,7 +27,7 @@ export default function NotFound() {
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm transition active:scale-[0.98] hover:brightness-95"
+          className="btn-tactile flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm hover:brightness-95"
         >
           <WhatsAppIcon className="h-5 w-5" />
           Hablar por WhatsApp

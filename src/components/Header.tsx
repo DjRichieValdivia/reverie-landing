@@ -51,8 +51,8 @@ export function Header() {
               aria-current={activeId === link.href ? "true" : undefined}
               className={
                 activeId === link.href
-                  ? "font-semibold text-teal transition"
-                  : "text-navy/70 transition hover:text-navy"
+                  ? "font-semibold text-teal transition-colors"
+                  : "text-navy/70 transition-colors hover:text-navy"
               }
             >
               {link.label}
@@ -72,7 +72,7 @@ export function Header() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition active:scale-[0.98] hover:brightness-95"
+            className="btn-tactile flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:brightness-95"
           >
             <WhatsAppIcon className="h-4 w-4" />
             <span className="hidden sm:inline">WhatsApp</span>
@@ -83,51 +83,64 @@ export function Header() {
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy transition active:scale-[0.96] md:hidden"
+            className="btn-tactile flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy md:hidden"
           >
-            <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
-              {menuOpen ? (
-                <path
-                  d="m6 6 12 12M18 6 6 18"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-              ) : (
+            <span className="menu-icon" data-open={menuOpen}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="icon-burger h-5 w-5"
+                aria-hidden="true"
+              >
                 <path
                   d="M4 7h16M4 12h16M4 17h16"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
                 />
-              )}
-            </svg>
+              </svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="icon-close h-5 w-5"
+                aria-hidden="true"
+              >
+                <path
+                  d="m6 6 12 12M18 6 6 18"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
           </button>
         </div>
       </div>
 
-      {menuOpen && (
-        <nav className="border-t border-navy/10 bg-cream px-6 py-4 md:hidden">
-          <ul className="flex flex-col gap-1">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  aria-current={activeId === link.href ? "true" : undefined}
-                  className={
-                    activeId === link.href
-                      ? "block rounded-lg bg-sand/50 px-2 py-3 text-base font-semibold text-teal"
-                      : "block rounded-lg px-2 py-3 text-base font-medium text-navy/80 transition hover:bg-sand/50 hover:text-navy"
-                  }
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      <div className="mobile-nav-wrap md:hidden" data-open={menuOpen}>
+        <div className="mobile-nav-inner">
+          <nav className="mobile-nav-content border-t border-navy/10 bg-cream px-6 py-4">
+            <ul className="flex flex-col gap-1">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    aria-current={activeId === link.href ? "true" : undefined}
+                    className={
+                      activeId === link.href
+                        ? "block rounded-lg bg-sand/50 px-2 py-3 text-base font-semibold text-teal"
+                        : "block rounded-lg px-2 py-3 text-base font-medium text-navy/80 transition-colors hover:bg-sand/50 hover:text-navy"
+                    }
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
   );
 }

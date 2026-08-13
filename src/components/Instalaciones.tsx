@@ -1,5 +1,6 @@
 import { CheckIcon } from "./icons";
 import { PlaceholderPhoto } from "./PlaceholderPhoto";
+import { Reveal } from "./Reveal";
 
 const prestaciones = [
   "26 habitaciones con aire acondicionado y TV LED",
@@ -20,26 +21,30 @@ const fotos = ["Habitaciones", "Gimnasio", "Hidroterapia", "Realidad virtual (MO
 export function Instalaciones() {
   return (
     <section id="instalaciones" className="mx-auto max-w-6xl px-6 py-20">
-      <div className="max-w-2xl">
+      <Reveal className="max-w-2xl">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
           Instalaciones y equipamiento
         </p>
         <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
           Todo lo que un tratamiento serio necesita
         </h2>
-      </div>
+      </Reveal>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        {fotos.map((foto) => (
-          <PlaceholderPhoto key={foto} label={foto} className="aspect-[16/10] w-full" />
+        {fotos.map((foto, index) => (
+          <Reveal key={foto} delay={index * 70}>
+            <PlaceholderPhoto label={foto} className="aspect-[16/10] w-full" />
+          </Reveal>
         ))}
       </div>
 
       <ul className="mt-12 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-        {prestaciones.map((item) => (
-          <li key={item} className="flex items-start gap-3 text-navy/75">
-            <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-teal" />
-            <span>{item}</span>
+        {prestaciones.map((item, index) => (
+          <li key={item}>
+            <Reveal delay={Math.min(index, 6) * 40} className="flex items-start gap-3 text-navy/75">
+              <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-teal" />
+              <span>{item}</span>
+            </Reveal>
           </li>
         ))}
       </ul>

@@ -10,6 +10,8 @@
   --color-sage: #8caa9d;
   --color-sand: #e9e0cd;
   --color-whatsapp: #25d366;
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @theme inline {
@@ -74,8 +76,130 @@ body {
   animation: marquee-rtl 32s linear infinite;
 }
 
+/* Scroll reveal: toggled by the Reveal component via IntersectionObserver. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 700ms var(--ease-out-strong), transform 700ms var(--ease-out-strong);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance: fires once on mount, not scroll-triggered. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 700ms var(--ease-out-strong) both;
+  animation-delay: var(--fade-delay, 0ms);
+}
+
+/* Tactile press feedback for buttons and links styled as buttons. */
+.btn-tactile {
+  transition: transform 160ms var(--ease-out-strong), filter 160ms var(--ease-out-strong),
+    border-color 160ms var(--ease-out-strong);
+}
+
+.btn-tactile:active {
+  transform: scale(0.97);
+}
+
+/* Mobile nav: height-less accordion reveal, no JS measuring required. */
+.mobile-nav-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms var(--ease-in-out-strong);
+}
+
+.mobile-nav-wrap[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.mobile-nav-inner {
+  overflow: hidden;
+}
+
+.mobile-nav-content {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 200ms var(--ease-out-strong), transform 200ms var(--ease-out-strong);
+}
+
+.mobile-nav-wrap[data-open="true"] .mobile-nav-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 80ms;
+}
+
+/* Hamburger <-> close icon crossfade. */
+.menu-icon {
+  position: relative;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.menu-icon svg {
+  position: absolute;
+  inset: 0;
+  transition: opacity 200ms var(--ease-out-strong), transform 200ms var(--ease-out-strong);
+}
+
+.menu-icon .icon-close {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.7);
+}
+
+.menu-icon[data-open="true"] .icon-burger {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.7);
+}
+
+.menu-icon[data-open="true"] .icon-close {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Soft ambient glow behind hero/dark sections, purely decorative. */
+.ambient-glow {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee-rtl {
+  .animate-marquee-rtl,
+  .animate-fade-up {
     animation: none;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-tactile,
+  .btn-tactile:active {
+    transition: none;
+    transform: none;
+  }
+
+  .mobile-nav-wrap,
+  .mobile-nav-content,
+  .menu-icon svg {
+    transition: none;
   }
 }

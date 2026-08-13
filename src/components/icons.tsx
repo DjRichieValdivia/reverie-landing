@@ -57,6 +57,82 @@ export function CheckIcon({ className }: { className?: string }) {
   );
 }
 
+export function StethoscopeIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M6 3v6a4 4 0 0 0 8 0V3M8 3H4m6 0H8m8 0h-2m2 0h2"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M6 9v2.5A6.5 6.5 0 0 0 12.5 18h0A4.5 4.5 0 0 0 17 13.5V11"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="18.5" cy="11" r="1.6" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12.5" cy="19.5" r="1.6" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
+export function MotionIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="14" cy="4.5" r="1.8" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M8 21l2.2-5.5L8.5 13l1-4.5 3 1.5 1 3 3.5 1M10.2 15.5 13 17l1.5 4"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function BrainIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M9.5 3.5a3 3 0 0 0-3 3v.3A3 3 0 0 0 5 12a3 3 0 0 0 1 5.6V18a3 3 0 0 0 3 3 2.5 2.5 0 0 0 2.5-2.5v-12A2.5 2.5 0 0 0 9.5 3.5Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.5 3.5a3 3 0 0 1 3 3v.3A3 3 0 0 1 19 12a3 3 0 0 1-1 5.6V18a3 3 0 0 1-3 3 2.5 2.5 0 0 1-2.5-2.5v-12A2.5 2.5 0 0 1 14.5 3.5Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function PeopleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="9" cy="8" r="2.6" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M4 19c0-2.8 2.2-5 5-5s5 2.2 5 5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M15.5 6.2A2.6 2.6 0 0 1 17 11.2M15 14.2c1.9.5 3.3 2.2 3.3 4.3"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function ImageIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

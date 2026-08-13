@@ -1,4 +1,5 @@
 import { MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "./icons";
+import { Reveal } from "./Reveal";
 import { site, whatsappHref } from "@/lib/site";
 
 const direccionQuery = encodeURIComponent(site.direccion);
@@ -9,11 +10,11 @@ export function Contacto() {
   return (
     <section id="contacto" className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-2">
-        <div>
+        <Reveal>
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
             Contacto
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
             Estamos para ayudarte
           </h2>
           <p className="mt-4 text-lg text-navy/70">
@@ -43,14 +44,17 @@ export function Contacto() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 flex w-fit items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:brightness-95"
+            className="btn-tactile mt-8 flex w-fit items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-base font-semibold text-white shadow-sm hover:brightness-95"
           >
             <WhatsAppIcon className="h-5 w-5" />
             Hablar por WhatsApp
           </a>
-        </div>
+        </Reveal>
 
-        <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-navy/10 shadow-md lg:aspect-auto">
+        <Reveal
+          delay={80}
+          className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-navy/10 shadow-md lg:aspect-auto"
+        >
           <iframe
             title={`Mapa de ${site.direccion}`}
             src={mapsEmbedSrc}
@@ -64,7 +68,7 @@ export function Contacto() {
             href={mapsHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-navy shadow-lg backdrop-blur-sm transition hover:bg-teal hover:text-white"
+            className="btn-tactile absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-navy shadow-lg backdrop-blur-sm transition-colors hover:bg-teal hover:text-white"
           >
             Cómo llegar
             <svg
@@ -82,7 +86,7 @@ export function Contacto() {
               />
             </svg>
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
