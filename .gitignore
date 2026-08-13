@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scripts locales de arranque (dependen de la ruta de cada PC, no se comparten)
+run-dev.local.cmd
