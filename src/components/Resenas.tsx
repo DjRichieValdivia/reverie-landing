@@ -4,22 +4,12 @@ import { getResenas } from "@/lib/reviews";
 import { site } from "@/lib/site";
 
 function Stars({ rating, className = "h-4 w-4" }: { rating: number; className?: string }) {
-  const pct = (rating / 5) * 100;
+  const filled = Math.round(rating);
   return (
-    <span className="relative inline-flex" aria-hidden="true">
-      <span className="flex gap-0.5 text-navy/15">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <StarIcon key={i} className={className} />
-        ))}
-      </span>
-      <span
-        className="absolute inset-0 flex gap-0.5 overflow-hidden text-teal"
-        style={{ width: `${pct}%` }}
-      >
-        {Array.from({ length: 5 }).map((_, i) => (
-          <StarIcon key={i} className={className} />
-        ))}
-      </span>
+    <span className="flex gap-0.5" aria-hidden="true">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <StarIcon key={i} className={`${className} ${i < filled ? "text-teal" : "text-navy/15"}`} />
+      ))}
     </span>
   );
 }
@@ -44,7 +34,7 @@ export async function Resenas() {
             className="mt-4 inline-flex items-center gap-2.5 text-navy/70 hover:underline"
           >
             <GoogleIcon className="h-5 w-5 shrink-0" />
-            <Stars rating={Math.round(rating)} />
+            <Stars rating={rating} />
             <span className="tabular-nums">
               {rating.toString().replace(".", ",")} · {total} reseñas
             </span>
