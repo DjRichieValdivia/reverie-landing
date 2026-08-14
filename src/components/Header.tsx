@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
-import { Logo } from "./Logo";
 import { site, whatsappHref } from "@/lib/site";
 
 const links = [
@@ -61,7 +61,14 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <a href="#top" className="shrink-0 transition-opacity hover:opacity-80">
-          <Logo markClassName="h-8 w-8 sm:h-9 sm:w-9" textClassName="text-xl sm:text-2xl text-navy" />
+          <Image
+            src="/logo-reverie-original.png"
+            alt="RÊVERIE"
+            width={360}
+            height={100}
+            priority
+            className="h-8 w-auto sm:h-9"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium md:flex">

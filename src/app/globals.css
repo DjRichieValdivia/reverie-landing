@@ -3,11 +3,11 @@
 :root {
   --color-cream: #f7f4ee;
   --color-cream-dark: #efe9dd;
-  --color-navy: #16323e;
-  --color-navy-soft: #24515f;
-  --color-teal: #2f6e73;
-  --color-teal-dark: #1f4c50;
-  --color-sage: #8caa9d;
+  --color-navy: #1e3a5f;
+  --color-navy-soft: #3d6098;
+  --color-teal: #5a9a44;
+  --color-teal-dark: #3f7530;
+  --color-sage: #b7cf7c;
   --color-sand: #e9e0cd;
   --color-whatsapp: #25d366;
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
