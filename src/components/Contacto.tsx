@@ -25,7 +25,7 @@ export function Contacto() {
             <li className="flex items-center gap-3">
               <PhoneIcon className="h-5 w-5 text-teal" />
               <a href={site.telefonoHref} className="text-navy hover:underline">
-                {site.telefono1} / {site.telefono2}
+                {site.telefono1}
               </a>
             </li>
             <li className="flex items-center gap-3">

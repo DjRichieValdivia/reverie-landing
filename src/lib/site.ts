@@ -3,9 +3,9 @@
 
 export const site = {
   nombre: "RÊVERIE",
-  telefono1: "(0230) 4672991",
-  telefono2: "(0230) 4426617",
-  telefonoHref: "tel:+542304672991",
+  // Línea de Admisión Internación, según ficha institucional (ago. 2026). Horario: 8 a 20 hs.
+  telefono1: "11 2404 7615",
+  telefonoHref: "tel:+541124047615",
   // Número real, tomado del botón de WhatsApp del sitio actual (reverie.com.ar).
   whatsapp: "5491124047615",
   whatsappMensaje: "Hola, quisiera pedir información sobre RÊVERIE.",

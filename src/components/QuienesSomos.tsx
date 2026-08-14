@@ -8,8 +8,8 @@ export function QuienesSomos() {
         <Reveal delay={80} className="lg:order-2">
           <Photo
             name="equipo"
-            alt="Equipo o pasillo de RÊVERIE"
-            label="Foto del equipo o un pasillo de la clínica"
+            alt="Patio y espacios exteriores de RÊVERIE"
+            label="Foto del patio de la clínica"
             className="aspect-[4/3] w-full"
           />
         </Reveal>

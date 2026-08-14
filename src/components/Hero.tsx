@@ -62,7 +62,7 @@ export function Hero() {
               className="animate-fade-up mt-5 text-sm text-navy/50"
               style={{ "--fade-delay": "300ms" } as React.CSSProperties}
             >
-              {site.telefono1} / {site.telefono2} · Guardia médica las 24 horas
+              {site.telefono1} · Guardia médica las 24 horas
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export function Hero() {
 
         <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-navy/10 pt-8 text-sm text-navy/70">
           <span>
-            <strong className="font-semibold text-navy">26</strong> habitaciones
+            <strong className="font-semibold text-navy">32</strong> habitaciones
             para internación
           </span>
           <span className="hidden text-navy/20 sm:inline">·</span>

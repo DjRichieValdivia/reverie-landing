@@ -3,7 +3,7 @@ import { Photo } from "./Photo";
 import { Reveal } from "./Reveal";
 
 const prestaciones = [
-  "26 habitaciones con aire acondicionado y TV LED",
+  "32 habitaciones con aire acondicionado y TV LED",
   "Sector de cuidados especiales para pacientes complejos",
   "Office de enfermería",
   "Gabinetes y consultorios",
