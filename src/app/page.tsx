@@ -1,6 +1,7 @@
 import { Areas } from "@/components/Areas";
 import { ComoEmpezar } from "@/components/ComoEmpezar";
 import { Contacto } from "@/components/Contacto";
+import { EspaciosVerdes } from "@/components/EspaciosVerdes";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
@@ -19,6 +20,7 @@ export default function Home() {
         <QuienesSomos />
         <Areas />
         <Instalaciones />
+        <EspaciosVerdes />
         <ComoEmpezar />
         <Resenas />
         <ObrasSociales />

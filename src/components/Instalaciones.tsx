@@ -19,6 +19,7 @@ const prestaciones = [
 const fotos = [
   { nombre: "habitaciones", label: "Habitaciones" },
   { nombre: "gimnasio", label: "Gimnasio" },
+  { nombre: "pasillo", label: "Pasillo de internación" },
   { nombre: "hidroterapia", label: "Hidroterapia" },
   { nombre: "realidad-virtual", label: "Realidad virtual (MOTMI)" },
 ];
@@ -35,7 +36,7 @@ export function Instalaciones() {
         </h2>
       </Reveal>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {fotos.map((foto, index) => (
           <Reveal key={foto.nombre} delay={index * 70}>
             <Photo
