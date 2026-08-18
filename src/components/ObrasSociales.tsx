@@ -125,7 +125,14 @@ export function ObrasSociales() {
           </p>
         </Reveal>
 
+        <ul className="sr-only">
+          {obras.map((obra) => (
+            <li key={obra.nombre}>{obra.nombre}</li>
+          ))}
+        </ul>
+
         <div
+          aria-hidden="true"
           className="relative mt-8 cursor-grab select-none overflow-hidden active:cursor-grabbing"
           style={{
             touchAction: "pan-y",
