@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MailIcon, PhoneIcon } from "./icons";
+import { FacebookIcon, InstagramIcon, MailIcon, PhoneIcon } from "./icons";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -38,6 +38,26 @@ export function Footer() {
           <a href="#top" className="transition-colors hover:text-white">
             Volver arriba
           </a>
+          <div className="flex items-center gap-3 border-l border-white/15 pl-5">
+            <a
+              href={site.facebookHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook de RÊVERIE"
+              className="transition-colors hover:text-white"
+            >
+              <FacebookIcon className="h-4.5 w-4.5" />
+            </a>
+            <a
+              href={site.instagramHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de RÊVERIE"
+              className="transition-colors hover:text-white"
+            >
+              <InstagramIcon className="h-4.5 w-4.5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -179,3 +179,24 @@ export function ImageIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M14.5 8.5h2V5.5h-2c-2.2 0-4 1.8-4 4v2H8.5v3H10.5V21h3v-6.5h2l1-3H13.5v-2c0-.55.45-1 1-1Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+export function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="17" cy="7" r="1.1" fill="currentColor" />
+    </svg>
+  );
+}

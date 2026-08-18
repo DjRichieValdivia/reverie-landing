@@ -16,6 +16,9 @@ export const site = {
     "https://www.google.com/maps/search/Reverie+Clinica+de+Rehabilitacion+Pilar",
   googleRating: 4.3,
   googleReviewCount: 49,
+  // Redes oficiales, tomadas del sitio actual (reverie.com.ar).
+  facebookHref: "https://www.facebook.com/reverieclinica/",
+  instagramHref: "https://www.instagram.com/reverieclinica/",
 };
 
 export const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
