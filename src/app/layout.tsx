@@ -71,6 +71,7 @@ const jsonLd = {
     "Clínica de rehabilitación neuromotora y traumatológica en Pilar, con internación, hospital de día e hidroterapia.",
   telephone: [site.telefonoHref.replace("tel:", "")],
   email: site.email,
+  sameAs: [site.facebookHref, site.instagramHref],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Francisco Lauría 2125",
