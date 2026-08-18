@@ -35,6 +35,7 @@ export function EspaciosVerdes() {
                 alt={foto.label}
                 label={foto.label}
                 className="aspect-[4/3] w-full"
+                sizes="(min-width: 640px) 33vw, 100vw"
               />
             </Reveal>
           ))}

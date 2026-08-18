@@ -8,12 +8,14 @@ export function Photo({
   label,
   className = "",
   priority = false,
+  sizes = "(min-width: 1024px) 50vw, 100vw",
 }: {
   name: string;
   alt: string;
   label: string;
   className?: string;
   priority?: boolean;
+  sizes?: string;
 }) {
   const src = getPhotoSrc(name);
 
@@ -28,7 +30,7 @@ export function Photo({
         alt={alt}
         fill
         priority={priority}
-        sizes="(min-width: 1024px) 50vw, 100vw"
+        sizes={sizes}
         className="object-cover"
       />
     </div>
