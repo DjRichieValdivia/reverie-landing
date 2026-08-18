@@ -6,9 +6,13 @@ import { site } from "@/lib/site";
 function Stars({ rating, className = "h-4 w-4" }: { rating: number; className?: string }) {
   const filled = Math.round(rating);
   return (
-    <span className="flex gap-0.5" aria-hidden="true">
+    <span className="flex gap-0.5" role="img" aria-label={`Calificación: ${filled} de 5 estrellas`}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <StarIcon key={i} className={`${className} ${i < filled ? "text-teal" : "text-navy/15"}`} />
+        <StarIcon
+          key={i}
+          aria-hidden="true"
+          className={`${className} ${i < filled ? "text-teal" : "text-navy/15"}`}
+        />
       ))}
     </span>
   );
