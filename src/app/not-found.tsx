@@ -5,7 +5,7 @@ import { whatsappHref } from "@/lib/site";
 export default function NotFound() {
   return (
     <div className="flex min-h-dvh flex-col items-center justify-center bg-cream px-6 text-center">
-      <p className="text-sm font-semibold uppercase tracking-wide text-teal">
+      <p className="text-sm font-semibold uppercase tracking-wide text-teal-dark">
         Error 404
       </p>
       <h1 className="font-display mt-3 text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">

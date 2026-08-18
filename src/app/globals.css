@@ -52,7 +52,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-teal);
+  background: var(--color-teal-dark);
   color: var(--color-cream);
 }
 

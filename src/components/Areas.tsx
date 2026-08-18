@@ -29,7 +29,7 @@ export function Areas() {
     <section id="areas" className="bg-cream-dark py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="max-w-2xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal-dark">
             Áreas de servicio
           </p>
           <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">

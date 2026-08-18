@@ -120,7 +120,7 @@ export function ObrasSociales() {
     <section className="bg-cream-dark py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <p className="text-center text-sm font-semibold uppercase tracking-wide text-teal">
+          <p className="text-center text-sm font-semibold uppercase tracking-wide text-teal-dark">
             Trabajamos con estas obras sociales
           </p>
         </Reveal>

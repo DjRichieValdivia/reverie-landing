@@ -14,7 +14,7 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p
-              className="animate-fade-up mb-4 text-sm font-semibold uppercase tracking-wide text-teal"
+              className="animate-fade-up mb-4 text-sm font-semibold uppercase tracking-wide text-teal-dark"
               style={{ "--fade-delay": "0ms" } as React.CSSProperties}
             >
               Clínica de rehabilitación en Pilar · desde 2015

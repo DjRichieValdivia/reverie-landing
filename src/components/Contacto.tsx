@@ -11,7 +11,7 @@ export function Contacto() {
     <section id="contacto" className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-2">
         <Reveal>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal-dark">
             Contacto
           </p>
           <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">

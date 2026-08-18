@@ -28,7 +28,7 @@ export function Instalaciones() {
   return (
     <section id="instalaciones" className="mx-auto max-w-6xl px-6 py-20">
       <Reveal className="max-w-2xl">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal-dark">
           Instalaciones y equipamiento
         </p>
         <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">

@@ -79,7 +79,7 @@ export function Header() {
               aria-current={activeId === link.href ? "true" : undefined}
               className={
                 activeId === link.href
-                  ? "font-semibold text-teal transition-colors"
+                  ? "font-semibold text-teal-dark transition-colors"
                   : "text-navy/70 transition-colors hover:text-navy"
               }
             >
@@ -157,7 +157,7 @@ export function Header() {
                     aria-current={activeId === link.href ? "true" : undefined}
                     className={
                       activeId === link.href
-                        ? "block rounded-lg bg-sand/50 px-2 py-3 text-base font-semibold text-teal"
+                        ? "block rounded-lg bg-sand/50 px-2 py-3 text-base font-semibold text-teal-dark"
                         : "block rounded-lg px-2 py-3 text-base font-medium text-navy/80 transition-colors hover:bg-sand/50 hover:text-navy"
                     }
                   >
