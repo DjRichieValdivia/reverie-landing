@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   metadataBase,
   title,
   description,
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: false,
     follow: false,
