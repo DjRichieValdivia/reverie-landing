@@ -14,7 +14,7 @@ export default function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#16323e",
+          backgroundColor: "#1e3a5f",
         }}
       >
         <div
@@ -31,7 +31,7 @@ export default function Image() {
           style={{
             marginTop: 28,
             fontSize: 34,
-            color: "#8caa9d",
+            color: "#b7cf7c",
           }}
         >
           Clínica de rehabilitación en Pilar

@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { MailIcon, PhoneIcon } from "./icons";
-import { Logo } from "./Logo";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -7,10 +7,12 @@ export function Footer() {
     <footer className="border-t border-navy/10 bg-navy py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-white/60 sm:flex-row">
         <div className="flex flex-col items-center gap-2 sm:items-start">
-          <Logo
-            markClassName="h-7 w-7"
-            textClassName="text-lg text-white"
-            crossColor="var(--color-cream)"
+          <Image
+            src="/logo-reverie-original.png"
+            alt="RÊVERIE"
+            width={360}
+            height={100}
+            className="h-7 w-auto"
           />
           <p>
             Clínica de Rehabilitación © {new Date().getFullYear()} ·{" "}

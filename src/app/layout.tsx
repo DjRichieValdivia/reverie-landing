@@ -60,7 +60,7 @@ const jsonLd = {
   name: site.nombre,
   description:
     "Clínica de rehabilitación neuromotora y traumatológica en Pilar, con internación, hospital de día e hidroterapia.",
-  telephone: ["+542304672991", "+542304426617"],
+  telephone: [site.telefonoHref.replace("tel:", "")],
   email: site.email,
   address: {
     "@type": "PostalAddress",
