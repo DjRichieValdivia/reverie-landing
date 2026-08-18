@@ -22,7 +22,7 @@ export function Photo({
   }
 
   return (
-    <div className={`relative overflow-hidden rounded-3xl bg-sand/40 ${className}`}>
+    <div className={`photo-zoom relative rounded-3xl bg-sand/40 ${className}`}>
       <Image
         src={src}
         alt={alt}

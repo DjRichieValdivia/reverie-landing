@@ -97,6 +97,19 @@ header[data-elevated="true"] {
   transform: translateY(0);
 }
 
+[data-reveal][data-from="left"] {
+  transform: translateX(-24px);
+}
+
+[data-reveal][data-from="right"] {
+  transform: translateX(24px);
+}
+
+[data-reveal="in"][data-from="left"],
+[data-reveal="in"][data-from="right"] {
+  transform: translateX(0);
+}
+
 /* Hero entrance: fires once on mount, not scroll-triggered. */
 @keyframes fade-up {
   from {
@@ -187,6 +200,77 @@ header[data-elevated="true"] {
   filter: blur(60px);
 }
 
+/* Scroll progress bar: 1:1 with user's own scroll input, not a looping
+   decoration, so it's exempt from the "seen too often" rule. */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  height: 3px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: var(--color-teal-dark);
+  will-change: transform;
+}
+
+/* Real photos get a gentle hover zoom; placeholders never do (they aren't
+   clickable, so a hover affordance there would be misleading). */
+.photo-zoom {
+  overflow: hidden;
+}
+
+.photo-zoom img {
+  transition: transform 500ms var(--ease-out-strong);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .photo-zoom:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* Logo: a small, one-off wink on hover — not a constant animation. */
+.logo-mark {
+  transition: transform 350ms var(--ease-out-strong);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover > .logo-mark {
+    transform: rotate(-4deg) scale(1.03);
+  }
+}
+
+/* WhatsApp float: a single spring-like pop on first appearance only. */
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 550ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: var(--fade-delay, 0ms);
+}
+
+/* Editorial list rows (Áreas): a soft highlight on hover signals the row
+   without pretending it's a link. */
+.row-hover {
+  transition: background-color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .row-hover:hover {
+    background-color: color-mix(in srgb, var(--color-sand) 45%, transparent);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up {
     animation: none;
@@ -207,6 +291,20 @@ header[data-elevated="true"] {
   .mobile-nav-wrap,
   .mobile-nav-content,
   .menu-icon svg {
+    transition: none;
+  }
+
+  .photo-zoom img,
+  .logo-mark,
+  .row-hover {
+    transition: none;
+  }
+
+  .animate-pop-in {
+    animation: none;
+  }
+
+  #scroll-progress {
     transition: none;
   }
 }

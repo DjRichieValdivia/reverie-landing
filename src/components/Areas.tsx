@@ -40,12 +40,12 @@ export function Areas() {
         <div className="mt-10 divide-y divide-navy/10 border-t border-navy/10">
           {areas.map((area, index) => (
             <Reveal key={area.nombre} delay={index * 70}>
-              <div className="flex flex-col gap-4 py-7 sm:flex-row sm:items-center sm:gap-10">
+              <div className="row-hover group -mx-4 flex flex-col gap-4 rounded-xl px-4 py-7 sm:flex-row sm:items-center sm:gap-10">
                 <span className="font-display shrink-0 text-3xl text-teal/35 sm:w-14">
                   0{index + 1}
                 </span>
                 <div className="flex items-start gap-4">
-                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal-dark">
+                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal-dark transition-colors duration-200 group-hover:bg-teal/20">
                     <area.Icon className="h-5 w-5" />
                   </div>
                   <div>

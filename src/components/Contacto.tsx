@@ -10,7 +10,7 @@ export function Contacto() {
   return (
     <section id="contacto" className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-2">
-        <Reveal>
+        <Reveal from="left">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal-dark">
             Contacto
           </p>
@@ -60,6 +60,7 @@ export function Contacto() {
 
         <Reveal
           delay={80}
+          from="right"
           className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-navy/10 shadow-md lg:aspect-auto"
         >
           <iframe

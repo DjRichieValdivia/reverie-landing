@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { site } from "@/lib/site";
 
 const geistSans = Geist({
@@ -93,6 +94,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ScrollProgress />
         <a
           href="#main-content"
           className="fixed left-4 top-4 z-[100] -translate-y-20 rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white transition focus:translate-y-0"

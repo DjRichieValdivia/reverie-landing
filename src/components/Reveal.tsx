@@ -5,10 +5,12 @@ import { useEffect, useRef, useState } from "react";
 export function Reveal({
   children,
   delay = 0,
+  from = "up",
   className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
+  from?: "up" | "left" | "right";
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -36,6 +38,7 @@ export function Reveal({
     <div
       ref={ref}
       data-reveal={visible ? "in" : undefined}
+      data-from={from === "up" ? undefined : from}
       style={{ "--reveal-delay": `${delay}ms` } as React.CSSProperties}
       className={className}
     >

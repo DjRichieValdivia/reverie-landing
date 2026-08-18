@@ -5,7 +5,7 @@ export function QuienesSomos() {
   return (
     <section id="quienes-somos" className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        <Reveal delay={80} className="lg:order-2">
+        <Reveal delay={80} from="right" className="lg:order-2">
           <Photo
             name="equipo"
             alt="Patio y espacios exteriores de RÊVERIE"
@@ -13,7 +13,7 @@ export function QuienesSomos() {
             className="aspect-[4/3] w-full"
           />
         </Reveal>
-        <Reveal className="lg:order-1">
+        <Reveal from="left" className="lg:order-1">
           <h2 className="font-display text-balance text-3xl font-medium leading-[1.15] text-navy sm:text-4xl">
             Rehabilitar es <em className="text-teal-dark italic">más</em> que tratar
             el cuerpo

@@ -60,14 +60,14 @@ export function Header() {
       className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur"
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#top" className="shrink-0 transition-opacity hover:opacity-80">
+        <a href="#top" className="shrink-0">
           <Image
             src="/logo-reverie-original.png"
             alt="RÊVERIE"
             width={360}
             height={100}
             priority
-            className="h-8 w-auto sm:h-9"
+            className="logo-mark h-8 w-auto sm:h-9"
           />
         </a>
 
