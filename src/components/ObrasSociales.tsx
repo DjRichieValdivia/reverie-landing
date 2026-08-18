@@ -172,7 +172,7 @@ export function ObrasSociales() {
           </div>
         </div>
 
-        <p className="mt-6 text-center text-sm text-navy/45">
+        <p className="mt-6 text-center text-sm text-navy/70">
           Logos obtenidos de los sitios oficiales de cada obra social; a confirmar con el
           cliente. Bancarios, OSCHOCA y Caja de Previsión Social de Santa Cruz quedan
           pendientes de reemplazo.

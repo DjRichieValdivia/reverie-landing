@@ -59,7 +59,7 @@ export function Hero() {
             </div>
 
             <p
-              className="animate-fade-up mt-5 text-sm text-navy/50"
+              className="animate-fade-up mt-5 text-sm text-navy/70"
               style={{ "--fade-delay": "300ms" } as React.CSSProperties}
             >
               {site.telefono1} · Guardia médica las 24 horas

@@ -50,7 +50,7 @@ export function Areas() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-navy">{area.nombre}</h3>
-                    <p className="mt-1 text-navy/65">{area.detalle}</p>
+                    <p className="mt-1 text-navy/70">{area.detalle}</p>
                   </div>
                 </div>
               </div>
