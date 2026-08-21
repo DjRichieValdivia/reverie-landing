@@ -10,10 +10,11 @@ export function Hero() {
         className="ambient-glow left-[-10%] top-[-25%] h-80 w-80 bg-sage/10"
       />
 
-      {/* Foto a sangre: ocupa todo el borde derecho de la pantalla en desktop,
-          en vez de flotar como una tarjeta chica al lado del texto. */}
+      {/* Foto a sangre: pegada al borde derecho de la pantalla en desktop,
+          centrada verticalmente y con su proporción real (sin estirarla ni
+          recortarla para que combine con el alto del texto). */}
       <div
-        className="animate-fade-up aspect-[4/3] w-full lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:h-full lg:w-[45%]"
+        className="animate-fade-up aspect-[4/3] w-full lg:absolute lg:right-0 lg:top-1/2 lg:aspect-[3/2] lg:w-[42%] lg:-translate-y-1/2"
         style={{ "--fade-delay": "120ms" } as React.CSSProperties}
       >
         <Photo
@@ -26,7 +27,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pt-20 lg:pr-[42%]">
+      <div className="relative mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pt-20 lg:pr-[40%]">
         <p
           className="animate-fade-up mb-4 text-sm font-semibold uppercase tracking-wide text-teal-dark"
           style={{ "--fade-delay": "0ms" } as React.CSSProperties}

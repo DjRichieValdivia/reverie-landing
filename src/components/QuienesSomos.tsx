@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 export function QuienesSomos() {
   return (
     <section id="quienes-somos" className="mx-auto max-w-6xl px-6 py-20">
-      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)]">
+      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
         <Reveal delay={80} from="right" className="lg:order-2">
           <div className="relative">
             <div
@@ -15,7 +15,7 @@ export function QuienesSomos() {
               name="equipo"
               alt="Patio y espacios exteriores de RÊVERIE"
               label="Foto del patio de la clínica"
-              className="relative aspect-[3/4] w-full"
+              className="relative aspect-[4/3] w-full"
             />
           </div>
         </Reveal>

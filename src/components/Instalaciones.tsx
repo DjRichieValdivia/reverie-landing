@@ -36,26 +36,30 @@ export function Instalaciones() {
         </h2>
       </Reveal>
 
-      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-        {fotos.map((foto, index) => (
-          <Reveal
-            key={foto.nombre}
-            delay={index * 70}
-            className={index === 0 ? "col-span-2 row-span-2" : ""}
-          >
-            <Photo
-              name={foto.nombre}
-              alt={foto.label}
-              label={foto.label}
-              className={index === 0 ? "h-full w-full" : "aspect-square w-full"}
-              sizes={
-                index === 0
-                  ? "(min-width: 640px) 50vw, 100vw"
-                  : "(min-width: 640px) 25vw, 50vw"
-              }
-            />
-          </Reveal>
-        ))}
+      <div className="mt-10">
+        <Reveal>
+          <Photo
+            name={fotos[0].nombre}
+            alt={fotos[0].label}
+            label={fotos[0].label}
+            className="aspect-[16/9] w-full"
+            sizes="100vw"
+          />
+        </Reveal>
+
+        <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {fotos.slice(1).map((foto, index) => (
+            <Reveal key={foto.nombre} delay={(index + 1) * 70}>
+              <Photo
+                name={foto.nombre}
+                alt={foto.label}
+                label={foto.label}
+                className="aspect-[4/3] w-full"
+                sizes="(min-width: 640px) 25vw, 50vw"
+              />
+            </Reveal>
+          ))}
+        </div>
       </div>
 
       <ul className="mt-12 grid gap-x-8 gap-y-3 sm:grid-cols-2">
