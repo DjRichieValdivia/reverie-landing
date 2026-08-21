@@ -6,18 +6,12 @@ export function QuienesSomos() {
     <section id="quienes-somos" className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
         <Reveal delay={80} from="right" className="lg:order-2">
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="absolute -bottom-5 -right-5 hidden h-full w-full rounded-3xl bg-sage/25 sm:block"
-            />
-            <Photo
-              name="equipo"
-              alt="Patio y espacios exteriores de RÊVERIE"
-              label="Foto del patio de la clínica"
-              className="relative aspect-[4/3] w-full"
-            />
-          </div>
+          <Photo
+            name="equipo"
+            alt="Patio y espacios exteriores de RÊVERIE"
+            label="Foto del patio de la clínica"
+            className="aspect-[4/3] w-full"
+          />
         </Reveal>
         <Reveal from="left" className="lg:order-1">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal-dark">

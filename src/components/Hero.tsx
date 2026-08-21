@@ -14,7 +14,7 @@ export function Hero() {
           centrada verticalmente y con su proporción real (sin estirarla ni
           recortarla para que combine con el alto del texto). */}
       <div
-        className="animate-fade-up aspect-[4/3] w-full lg:absolute lg:right-0 lg:top-1/2 lg:aspect-[3/2] lg:w-[42%] lg:-translate-y-1/2"
+        className="animate-fade-up aspect-[4/3] w-full lg:absolute lg:right-0 lg:top-1/2 lg:aspect-[4/3] lg:w-[42%] lg:-translate-y-1/2"
         style={{ "--fade-delay": "120ms" } as React.CSSProperties}
       >
         <Photo
@@ -23,6 +23,7 @@ export function Hero() {
           label="Foto de fachada o recepción"
           className="h-full w-full"
           rounded="rounded-3xl lg:rounded-l-[3.5rem] lg:rounded-r-none"
+          objectPosition="object-right"
           priority
         />
       </div>

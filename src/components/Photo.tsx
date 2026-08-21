@@ -10,6 +10,7 @@ export function Photo({
   priority = false,
   sizes = "(min-width: 1024px) 50vw, 100vw",
   rounded = "rounded-3xl",
+  objectPosition = "object-center",
 }: {
   name: string;
   alt: string;
@@ -18,6 +19,7 @@ export function Photo({
   priority?: boolean;
   sizes?: string;
   rounded?: string;
+  objectPosition?: string;
 }) {
   const src = getPhotoSrc(name);
 
@@ -33,7 +35,7 @@ export function Photo({
         fill
         priority={priority}
         sizes={sizes}
-        className="object-cover"
+        className={`object-cover ${objectPosition}`}
       />
     </div>
   );
