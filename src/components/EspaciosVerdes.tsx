@@ -27,15 +27,19 @@ export function EspaciosVerdes() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-rows-2">
           {fotos.map((foto, index) => (
-            <Reveal key={foto.nombre} delay={index * 70}>
+            <Reveal
+              key={foto.nombre}
+              delay={index * 70}
+              className={index === 0 ? "col-span-2 sm:col-span-1 sm:row-span-2" : ""}
+            >
               <Photo
                 name={foto.nombre}
                 alt={foto.label}
                 label={foto.label}
-                className="aspect-[4/3] w-full"
-                sizes="(min-width: 640px) 33vw, 100vw"
+                className={index === 0 ? "aspect-[4/3] w-full sm:h-full" : "aspect-square w-full sm:h-full"}
+                sizes="(min-width: 640px) 50vw, 100vw"
               />
             </Reveal>
           ))}

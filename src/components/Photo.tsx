@@ -9,6 +9,7 @@ export function Photo({
   className = "",
   priority = false,
   sizes = "(min-width: 1024px) 50vw, 100vw",
+  rounded = "rounded-3xl",
 }: {
   name: string;
   alt: string;
@@ -16,6 +17,7 @@ export function Photo({
   className?: string;
   priority?: boolean;
   sizes?: string;
+  rounded?: string;
 }) {
   const src = getPhotoSrc(name);
 
@@ -24,7 +26,7 @@ export function Photo({
   }
 
   return (
-    <div className={`photo-zoom relative rounded-3xl bg-sand/40 ${className}`}>
+    <div className={`photo-zoom relative bg-sand/40 ${rounded} ${className}`}>
       <Image
         src={src}
         alt={alt}

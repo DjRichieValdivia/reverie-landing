@@ -36,15 +36,23 @@ export function Instalaciones() {
         </h2>
       </Reveal>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
         {fotos.map((foto, index) => (
-          <Reveal key={foto.nombre} delay={index * 70}>
+          <Reveal
+            key={foto.nombre}
+            delay={index * 70}
+            className={index === 0 ? "col-span-2 row-span-2" : ""}
+          >
             <Photo
               name={foto.nombre}
               alt={foto.label}
               label={foto.label}
-              className="aspect-[16/10] w-full"
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className={index === 0 ? "h-full w-full" : "aspect-square w-full"}
+              sizes={
+                index === 0
+                  ? "(min-width: 640px) 50vw, 100vw"
+                  : "(min-width: 640px) 25vw, 50vw"
+              }
             />
           </Reveal>
         ))}
