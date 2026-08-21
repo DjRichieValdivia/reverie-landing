@@ -38,11 +38,16 @@ export function Hero() {
           className="font-display animate-fade-up text-balance text-4xl font-medium leading-[1.15] text-navy sm:text-5xl"
           style={{ "--fade-delay": "80ms" } as React.CSSProperties}
         >
-          Rehabilitación neuromotora y traumatológica, con un equipo a cargo
-          de cada paciente
+          Rehabilitación neuromotora y traumatológica
         </h1>
         <p
-          className="animate-fade-up text-pretty mt-6 max-w-xl text-lg leading-relaxed text-navy/70"
+          className="animate-fade-up text-pretty mt-4 max-w-xl text-xl font-medium leading-snug text-teal-dark"
+          style={{ "--fade-delay": "120ms" } as React.CSSProperties}
+        >
+          Un equipo a cargo de cada paciente, desde el primer día
+        </p>
+        <p
+          className="animate-fade-up text-pretty mt-4 max-w-xl text-lg leading-relaxed text-navy/70"
           style={{ "--fade-delay": "160ms" } as React.CSSProperties}
         >
           Internación, hospital de día e hidroterapia en Francisco Lauria
